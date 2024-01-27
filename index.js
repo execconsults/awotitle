@@ -232,7 +232,7 @@ app.all('*', (req,res,next)=>{
    res.status(statusCode).render('error.ejs', { err })
 })
 //server
-app.listen(5000, () => {
-    console.log('Serving on port 5000')
+app.listen(2000, () => {
+    console.log('Serving on port 2000')
 })
 
