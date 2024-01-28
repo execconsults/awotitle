@@ -180,15 +180,15 @@ app.post('/submit-form', async (req, res) => {
 
 
 
-app.get('/real-estate-law',(req,res)=>{
-   res.render('view/realestate.ejs')
+app.get('/service',(req,res)=>{
+   res.render('view/service.ejs')
 })
 
-app.get('/buisness-law',(req,res)=>{
-    res.render('view/buisnesslaw.ejs')
+app.get('/resources',(req,res)=>{
+    res.render('view/resources.ejs')
  })
- app.get('/estate-planing',(req,res)=>{
-    res.render('view/estateplaning.ejs')
+ app.get('/updates',(req,res)=>{
+    res.render('view/updates.ejs')
  })
  app.get('/about-us',(req,res)=>{
     res.render('view/aboutus.ejs')
