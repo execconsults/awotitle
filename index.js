@@ -15,6 +15,9 @@ const Contacts = require('./model/appoiment')
 const apiKey = 'cb839aa178c341898fd81c36924005a9';
 const userName = 'zlivehe55';
 const apiEndpoint = 'https://api.namecheap.com/xml.response';
+const Contactus = require('./model/sendmsg')
+const Titleorder = require('./model/titleorder')
+
 const nodemailer = require('nodemailer');
 
 // const homeRoute = require('./routes/homeRoutes')
@@ -75,7 +78,7 @@ app.use(flash())
  
 app.get('/atom.xml', async (req, res) => {
    try {
-     const baseUrl = 'https://uniquweb.com'; // Update with your website's base URL
+     const baseUrl = 'https://www.awotitle.com/'; // Update with your website's base URL
      const currentDate = new Date().toISOString();
  
      // Generate the sitemap XML dynamically
@@ -206,22 +209,31 @@ app.get('/givng-back',(req,res)=>{
 
 app.get('/quotes',(req,res) =>{
   
-
+   
    res.render('view/quotes.ejs')
 })
 
-app.get('/privacy',(req,res)=>{
-   res.render('view/privacy.ejs')
-})
-app.get('/cookies',(req,res)=>{
-   res.render('view/cookies.ejs')
-})
-app.get('/terms',(req,res)=>{
 
-   res.render('view/terms.ejs')
+
+//post routes
+app.post('/contact',async(req,res) =>{
+   const body = req.body
+
+   const Contact = new Contactus(body)
+   await Contact.save()
+
+   res.send({msg:'Thanks for submitting your form'})
+
 })
-app.get('/help',(req,res)=>{
-   res.render('view/help.ejs')
+
+app.post('/title-order',async(req,res) =>{
+   const body = req.body
+
+   const Title = new Titleorder(body)
+   await Title.save()
+   res.send({msg:'Thanks for submitting your form'})
+
+
 })
 
 // 404 page not found route
