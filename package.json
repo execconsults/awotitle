@@ -1,15 +1,15 @@
 {
-  "name": "uniquweb",
+  "name": "awotitle",
   "version": "1.0.0",
-  "description": "make uniqweb",
+  "description": "mawotitle",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "web",
-    "unique",
-    "websitebuilder"
+    "title",
+    "autitle"
   ],
   "author": "zlivehe",
   "license": "ISC",

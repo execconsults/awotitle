@@ -199,7 +199,10 @@ app.get('/resources',(req,res)=>{
 app.get('/policy',(req,res)=>{
    res.render('view/privacy.ejs')
 })
+app.get('/givng-back',(req,res)=>{
+   res.render('view/givingback.ejs')
 
+})
 
 app.get('/quotes',(req,res) =>{
   
