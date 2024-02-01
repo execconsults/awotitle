@@ -352,7 +352,7 @@
             Alta Wire Fraud Warning
           </h4>
           <p class="mb-8 text-body-color  lg:mb-9" style="height: 4em;">
-            The ALTA Wire Fraud Warning serves as a crucial alert system designed to inform and protect homebuyers from the increasing threat of financial scams during real estate transactions.          </p>
+            The ALTA Wire Fraud Warning serves as a crucial alert system designed to inform and protect homebuyers    </p>
           <button data-modal-target="FraudWarning" data-modal-toggle="FraudWarning" href="javascript:void(0)" class="text-base font-medium hover:text-primary  dark:hover:text-primary">
             Learn More
           </button>
@@ -376,7 +376,7 @@
                       <span class="sr-only">Close modal</span>
                   </button>
               </div>
-              <form id="placetitle">
+              <form id="placetitle" action="/placetitle" method="post">
 
               <!-- Modal body -->
               <div class="p-4 md:p-5 space-y-4">
@@ -964,7 +964,7 @@
           <h3 class="mb-8 text-2xl font-semibold  md:text-[28px] md:leading-[1.42]">
             Send us a Message
           </h3>
-          <form>
+          <form  action="/contact" method="post">
             <div class="mb-[22px]">
               <label for="fullName" class="mb-4 block text-sm text-body-color ">Full Name*</label>
               <input type="text" name="fullName" placeholder="Adam Gelius" class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 " required>
@@ -1037,7 +1037,7 @@
     });
 
     // Define the URL endpoint
-const url = '/contact';
+const url = '/title-order';
 
 // Define the data to be sent in the request body
 const data = {

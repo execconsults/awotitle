@@ -219,19 +219,75 @@ app.get('/quotes',(req,res) =>{
 app.post('/contact',async(req,res) =>{
    const body = req.body
 
-   const Contact = new Contactus(body)
-   await Contact.save()
+   const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'awolaw@gmail.com',
+        pass: 'ogrf qiks kcoi hjtx',
+      },
+    });
+  
+    // Check if the email is in a valid format
+    if (validateEmailFormat(req.body.email)) {
+      const mailOptions = {
+        from: 'awolaw@gmail.com',
+        to: userEmail,
+        subject: 'Thanks for your appointment!',
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
+            <h1 style="font-size: 24px; color: #333; margin-bottom: 20px;">Hello ${req.body.fullName},</h1>
+            <p style="font-size: 16px; line-height: 1.5;">
+              Thank you for scheduling your appointment with us! We're looking forward to seeing you soon.
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+              Here are the details of your appointment:
+            </p>
+            <table style="width: 100%; border-collapse: collapse;">
+             
+                <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Email:</th>
+                <td style="padding: 10px; border: 1px solid #ddd;">${req.body.email}</td>
+              </tr>
+              <tr>
+                <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Phone Number:</th>
+                <td style="padding: 10px; border: 1px solid #ddd;">${req.body.phone}</td>
+              </tr>
+              <tr>
+                <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Message:</th>
+                <td style="padding: 10px; border: 1px solid #ddd;">${req.body.message}</td>
+              </tr>
+            </table>
+            <p style="font-size: 16px; margin-top: 20px;">
+              Please feel free to contact us if you have any questions or need to make any changes to your appointment.
+            </p>
+            <p style="font-size: 16px;">
+              Sincerely,<br>
+              The Appointment Team
+            </p>
+          </div>
+        `,
+      };
+  
+      // Send the email
+      await transporter.sendMail(mailOptions);
+  
+      console.log("Welcome email sent successfully");
+    } else {
+      console.error(`Invalid email format for user:`);
+    }
+  
 
    res.send({msg:'Thanks for submitting your form'})
 
 })
 
+
+
 app.post('/title-order',async(req,res) =>{
    const body = req.body
-
-   const Title = new Titleorder(body)
-   await Title.save()
-   res.send({msg:'Thanks for submitting your form'})
+   console.log(body)
+   // const Title = new Titleorder(body)
+   // await Title.save()
+   // res.send({msg:'Thanks for submitting your form'})
 
 
 })

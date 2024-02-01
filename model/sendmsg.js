@@ -16,6 +16,6 @@ const sendSchema = new mongoose.Schema({
 });
 
 // Create a Mongoose model
-const sendmsg = mongoose.model('sendmsg', sendSchema);
+const Contactus = mongoose.model('Contactus', sendSchema);
 
-module.exports = sendmsg
+module.exports = Contactus
