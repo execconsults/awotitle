@@ -376,7 +376,7 @@
                       <span class="sr-only">Close modal</span>
                   </button>
               </div>
-              <form id="placetitle" action="/placetitle" method="post">
+              <form id="placetitle" action="/placetitle" method="post" >
 
               <!-- Modal body -->
               <div class="p-4 md:p-5 space-y-4">
@@ -1036,30 +1036,24 @@
       observer.observe(element);
     });
 
-    // Define the URL endpoint
-const url = '/title-order';
 
-// Define the data to be sent in the request body
-const data = {
-  fullName: document.getElementsByName('fullName')[0].value,
-  email: document.getElementsByName('email')[0].value,
-  phone: document.getElementsByName('phone')[0].value,
-  message: document.getElementsByName('message')[0].value
-};
 
-// Define the request options
-const options = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(data)
-};
+   function submitForm(event) {
+        event.preventDefault();
 
-// Send the request and get the response
-fetch(url, options)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+        const form = document.getElementById('placetitle');
+        const formData = new FormData(form);
 
+        fetch('/placetitle', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // The response from the server
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
 </script>

@@ -281,16 +281,44 @@ app.post('/contact',async(req,res) =>{
 })
 
 
+app.post('/placetitle', async(req, res) => {
+  // Access the form data from req.body
+  const formData = req.body;
+  console.log(formData)
+  // const transporter = nodemailer.createTransport({
+  //   service: 'gmail',
+  //   auth: {
+  //     user: 'awolaw@gmail.com',
+  //     pass: 'ogrf qiks kcoi hjtx',
+  //   },
+  // });
 
-app.post('/title-order',async(req,res) =>{
-   const body = req.body
-   console.log(body)
-   // const Title = new Titleorder(body)
-   // await Title.save()
-   // res.send({msg:'Thanks for submitting your form'})
+  // // Check if the email is in a valid format
+  // if (validateEmailFormat(req.body.email)) {
+  //   const mailOptions = {
+  //     from: 'awolaw@gmail.com',
+  //     to: req.body.email,
+  //     subject: 'Thanks for title order',
+  //     html: `
+   
+  //     `,
+  //   };
+
+  //   // Send the email
+  //   await transporter.sendMail(mailOptions);
+
+  //   console.log("Welcome email sent successfully");
+  // } else {
+  //   console.error(`Invalid email format for user:`);
+  // }
 
 
-})
+
+  // // Process the form data as needed (e.g., save to a database)
+
+  // Send a response (e.g., a JSON response)
+  res.json({ message: 'Form data received successfully!', formData });
+});
 
 // 404 page not found route
 app.all('*', (req,res,next)=>{

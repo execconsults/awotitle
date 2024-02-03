@@ -1,2 +1,104 @@
 
 <% layout('./layouts/boilerplate.ejs')%> 
+<style>
+      /* Additional styles for the carousel */
+      .carousel {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-inner {
+            display: flex;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+        }
+
+        .carousel-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+</style>
+
+
+
+<div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div style="height: 86vh;" class="relative  overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/imgs/gb1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <div class="absolute left-10 bottom-10 p-4 rounded-lg bg-white bg-opacity-90">
+                <p>
+                    We are happy to sponsor Prince George’s County African Diaspora Advisory Board (ADAB) in celebrating International Women’s Day to honor women who are making a great impact in community building.
+                </p>
+            </div>
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/imgs/gb1.1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <div class="absolute left-10 bottom-10 p-4 rounded-lg bg-white bg-opacity-90">
+                <p>
+                    Proudly supporting two orphanages in South West Nigeria. We are happy to provide food, clothing, shelter, and critical funds to both orphanages to help support the care and education of hundreds of children who truly deserve a chance to thrive and be successful in life.                </p>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/imgs/gb2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <div class="absolute left-10 bottom-10 p-4 rounded-lg bg-white bg-opacity-90">
+                <p>
+                    Happy to support the Hearts of Gold Children’s Hospice in assisting children with severe medical conditions. We are happy to provide bunk beds, mattresses, food, diapers, desktop computer, and financial donations to support the staff providing critical care to these children.                </p>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/imgs/gb2.2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <div class="absolute left-10 bottom-10 p-4 rounded-lg bg-white bg-opacity-90">
+                <p>
+                    Happy to support the Hearts of Gold Children’s Hospice in assisting children with severe medical conditions. We are happy to provide bunk beds, mattresses, food, diapers, desktop computer, and financial donations to support the staff providing critical care to these children.                </p>
+            </div>
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/imgs/gbsm.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <div class="absolute left-10 bottom-10 p-4 rounded-lg bg-white bg-opacity-90">
+                <p>
+                    Happy to support the Hearts of Gold Children’s Hospice in assisting children with severe medical conditions. We are happy to provide bunk beds, mattresses, food, diapers, desktop computer, and financial donations to support the staff providing critical care to these children.                </p>
+            </div>
+        </div>
+
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
