@@ -71,9 +71,20 @@ app.use(flash())
  
 
 
- app.get('/',(req,res)=>{
-    res.render('view/home.ejs')
- })
+
+ app.get('/', async (req, res) => {
+  try {
+    // Making a POST request using Axios
+    const response = await axios.get('https://hibu.us/api/public/v2/merchants/22294/reviews.json?limit=10&page=1&filter=null&thirdParty=false&randomize=false&skipPagination=false', );
+
+    console.log(response.data)
+    // Pass the fetched data to the EJS template
+    res.render('view/home.ejs', { cards: response.data.reviews });
+  } catch (error) {
+    console.error('Error fetching reviews:', error);
+    res.send('Error fetching data');
+  }
+});
 
  
 app.get('/atom.xml', async (req, res) => {

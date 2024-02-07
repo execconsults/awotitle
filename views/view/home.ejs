@@ -59,7 +59,153 @@
   background-color: white;
   color: black;
 }
+@keyframes slideIn {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
 
+.service-item {
+  opacity: 0;
+  animation: slideIn 0.5s ease forwards;
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+
+.gtco-testimonials {
+  position: relative;
+  margin-top: 30px;
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 50px;
+  }
+
+  .owl-stage-outer {
+    padding: 30px 0;
+  }
+
+  .owl-nav {
+    display: none;
+  }
+.owl-stage{
+  display: flex;
+  overflow: scroll;
+}
+  .owl-dots {
+    text-align: center;
+
+    span {
+      position: relative;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      display: block;
+      background: #fff;
+      border: 2px solid #01b0f8;
+      margin: 0 5px;
+    }
+
+    .active {
+      box-shadow: none;
+
+      span {
+        background: #01b0f8;
+        box-shadow: none;
+        height: 12px;
+        width: 12px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .card {
+    background: #fff;
+    box-shadow: 0 8px 30px -7px #c9dff0;
+    margin: 0 20px;
+    padding: 0 10px;
+    border-radius: 20px;
+    border: 0;
+
+    .card-img-top {
+      max-width: 100px;
+      border-radius: 50%;
+      margin: 15px auto 0;
+      box-shadow: 0 8px 20px -4px #95abbb;
+      width: 100px;
+      height: 100px;
+    }
+
+    h5 {
+      color: #01b0f8;
+      font-size: 21px;
+      line-height: 1.3;
+
+      span {
+        font-size: 18px;
+        color: #666666;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      padding-bottom: 15px;
+    }
+  }
+
+  .active {
+    opacity: 0.5;
+    transition: all 0.3s;
+  }
+
+  .center {
+    opacity: 1;
+
+    h5 {
+      font-size: 24px;
+
+      span {
+        font-size: 20px;
+      }
+    }
+
+    .card-img-top {
+      max-width: 100%;
+      height: 120px;
+      width: 120px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .gtco-testimonials {
+    margin-top: 20px;
+  }
+}
+
+.owl-carousel {
+  .owl-nav button {
+    &.owl-next, &.owl-prev {
+      outline: 0;
+    }
+  }
+
+  button.owl-dot {
+    outline: 0;
+  }
+}
 </style>
 <div id="home" class="relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[160px]" style="background-image: url('imgs/awotitle-inner-harbor-of-baltimore-maryland-xl.jpg'); background-size: cover; background-repeat: no-repeat;">
   <div class="elementor-background-overlay"></div>
@@ -162,10 +308,9 @@
         <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 max-w-[540px] lg:mb-0">
             <h2 class="mb-5 text-3xl font-bold leading-tight  sm:text-[40px] sm:leading-[1.2]">
-              We Have 20 Years Of Experience In Law Firm & Attorney Service            </h2>
+              We Have 20 Years Of Experience In Title Services        </h2>
             <p class="mb-10 text-base leading-relaxed text-body-color ">
-              AWO Title is a full service title and escrow company serving clients throughout the state of Maryland, the District of Columbia, and Northern Virginia. We are your premier real estate title…    
-
+              AWO Title is a full-service title and escrow company that provide services to clients throughout the state of Maryland, the District of Columbia, and Northern Virginia. We are your premier real estate title company.
 
               <br>
               <br>
@@ -364,7 +509,7 @@
           <!-- Modal content -->
           <div class="relative bg-white rounded-lg shadow tex-">
               <!-- Modal header -->
-              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
                   <h3 class="text-xl font-semibold text-gray-900 ">
                     Place Title Order
                   </h3>
@@ -470,7 +615,7 @@
 
               </div>
               <!-- Modal footer -->
-              <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+              <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b ">
                   <button  type="submit" class="ms-3 text-gray-500  hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 text-gray-900 bg-blue-400 focus:z-10 text-white ">Submit</button>
                   <button data-modal-hide="titltemodel" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 text-gray-900 focus:z-10 ">Close</button>
 
@@ -488,7 +633,7 @@
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow tex-">
             <!-- Modal header -->
-            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
                 <h3 class="text-xl font-semibold text-gray-900 ">
                   Home Buying Resources
                 </h3>
@@ -561,7 +706,7 @@
            </div>
             </div>
             <!-- Modal footer -->
-            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b ">
                 <button data-modal-hide="BuyingResources" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 text-gray-900 focus:z-10 ">Close</button>
             </div>
         </div>
@@ -573,7 +718,7 @@
       <!-- Modal content -->
       <div class="relative bg-white rounded-lg shadow tex-">
           <!-- Modal header -->
-          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
               <h3 class="text-xl font-semibold text-gray-900 ">
                 Alta Wire Fraud Warning
 
@@ -612,7 +757,7 @@
       </section>
           </div>
           <!-- Modal footer -->
-          <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+          <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b ">
               <button data-modal-hide="FraudWarning" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 text-gray-900 focus:z-10 ">Close</button>
           </div>
       </div>
@@ -620,6 +765,233 @@
 </div>
 
   </div>
+</section>
+
+
+<section class=" p-2 md:mt-10"> 
+  <div class="container max-w-screen-xl mx-auto px-4">
+      <p class="text-blue-500 font-semibold  text-4xl md:text-4xl text-center uppercase mb-2">
+         OUR RESOURCES
+
+      </p>
+
+      <p class="font-semibold text-gray-500 text-xl md:text-xl text-center leading-normal mb-10">
+        We provides resources for title searches, title insurance, escrow and closing services for property transactions, and many more. <a href="/service"> Read More  </a>  <br>
+         
+      </p>
+
+  </div>
+  <div class="grid gap-14 md:grid-cols-4 md:gap-3">
+
+
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow ">
+      <a href="#">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Place Title Order</h5>
+      </a>
+      <p class="mb-3 font-normal text-gray-700 ">At Awo Title, we make the process of placing a title order easy and convenient for our customers. Whether you're buying or selling a property, our team of experienced professionals is here to guide you through every step of the process.</p>
+      <button data-modal-target="titlemodel" data-modal-toggle="titlemodel"  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+          Read more
+          <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+      </button>
+  </div>
+
+  <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow ">
+    <a href="#">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Home Buying Resources</h5>
+    </a>
+    <p class="mb-3 font-normal text-gray-700 ">At Awo Title, we understand that buying a home can be a daunting and overwhelming process, that's why we are here to help. Our team of experienced professionals is dedicated to providing our customers with the resources they need to make informed decisions and find their dream home.</p>
+    <button data-modal-target="HomeBuyingmodel" data-modal-toggle="HomeBuyingmodel"  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+        Read more
+        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+    </button>
+</div>
+
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow ">
+  <a href="#">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Home Closing Resources</h5>
+  </a>
+  <p class="mb-3 font-normal text-gray-700 ">At Awo Title, we understand that closing on a home can be a complex and confusing process. Our team of experienced professionals is dedicated to providing our customers with the resources they need to make informed decisions and close on their dream home with confidence.</p>
+  <button data-modal-target="AltaWiremodel" data-modal-toggle="ClosingResourcesmodel"  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+      Read more
+      <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+      </svg>
+  </button>
+</div>
+
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow ">
+  <a href="#">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Alta Wire Fraud Warning </h5>
+  </a>
+  <p class="mb-3 font-normal text-gray-700 ">At Awo Title, we understand that purchasing title insurance can be a confusing and overwhelming process. That's why we are here to help. Our team of experienced professionals is dedicated to providing our customers with the resources and guidance they need to make informed decisions and protect their property investments.</p>
+  <button data-modal-target="AltaWiremodel" data-modal-toggle="AltaWiremodel"  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+      Read more
+      <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+      </svg>
+  </button>
+</div>
+    </div>
+
+</section>
+<br><br>
+<section class="contents">
+<div class="title">
+  <div id="titlemodel" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow ">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                <h3 class="text-xl font-semibold text-gray-900 ">
+                  Place Title Order
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-hide="titlemodel">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base p-2 leading-relaxed text-gray-500 ">
+                  At Awo Title, we make the process of placing a title order easy and convenient for our customers. Whether you're buying or selling a property, our team of experienced professionals is here to guide you through every step of the process.
+                  <br>
+                  To place a title order, simply fill out our online title order form. This form will ask for basic information about the property in question, as well as the names of the parties involved in the transaction. Once you have submitted the form, one of our representatives will contact you to confirm the details of your order and to answer any questions you may have.
+<br>
+If you prefer, you can also place your title order by phone or in person at one of our convenient office locations. Our friendly and knowledgeable staff will be happy to assist you with your order and provide you with any additional information you need.
+<br>
+We understand that buying or selling a property can be a complex and time-consuming process, that's why at Awo Title, we strive to make it as smooth and stress-free as possible. With our efficient and reliable services, you can rest assured that your title order is in good hands.
+
+
+                </p>
+             
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b ">
+                <button data-modal-hide="titlemodel" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="Home Buying">
+  <div id="HomeBuyingmodel" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow ">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                <h3 class="text-xl font-semibold text-gray-900 ">
+                  Home Buying Resources                 </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-hide="HomeBuyingmodel">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base p-2 leading-relaxed text-gray-500 ">
+                  At Awo Title, we understand that buying a home can be a daunting and overwhelming process, that's why we are here to help. Our team of experienced professionals is dedicated to providing our customers with the resources they need to make informed decisions and find their dream home.                  <br>
+                  To place a title order, simply fill out our online title order form. This form will ask for basic information about the property in question, as well as the names of the parties involved in the transaction. Once you have submitted the form, one of our representatives will contact you to confirm the details of your order and to answer any questions you may have.
+<br>
+Customers can find a wealth of information on buying a home, including guides on the home buying process, tips on getting a mortgage, and information on the current real estate market, here on our website. <br>
+If you need more personalized assistance, customers can also contact us by phone or email to speak with one of our friendly and knowledgeable agents. Our agents are available to answer any questions you may have and provide you with the guidance you need to navigate the homebuying process.
+
+<br>
+
+We also provide in-person consultations for customers who want to meet with an agent in person, this can be scheduled by visiting our website or giving us a call.
+At Awo Title, we are committed to providing our customers with the best service and resources possible. So, whether you're a first-time homebuyer or an experienced investor, we are here to help you every step of the way.
+</p>
+             
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b ">
+                <button data-modal-hide="HomeBuyingmodel" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<div class="Home CLosing">
+  <div id="ClosingResourcesmodel" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow ">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                <h3 class="text-xl font-semibold text-gray-900 ">
+                  Home Closing Resources                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-hide="ClosingResourcesmodel">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base p-2 leading-relaxed text-gray-500 ">
+                  At Awo Title, we understand that closing on a home can be a complex and confusing process. Our team of experienced professionals is dedicated to providing our customers with the resources they need to make informed decisions and close on their dream home with confidence.
+<br>
+To reach our business, customers can use our online tools to access important documents related to their closing. Additionally, customers can contact us by phone or email for personalized assistance or schedule an in-person consultation with one of our knowledgeable agents. At Awo Title, we are committed to providing our customers with the best service and resources possible for a smooth closing process.
+             
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b ">
+                <button data-modal-hide="ClosingResourcesmodel" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="Alta Wire">
+  <div id="AltaWiremodel" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow ">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                <h3 class="text-xl font-semibold text-gray-900 ">
+                  Alta Wire Fraud Warning
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-hide="AltaWiremodel">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base p-2 leading-relaxed text-gray-500 ">
+                  At Awo Title, we understand that purchasing title insurance can be a confusing and overwhelming process. That's why we are here to help. Our team of experienced professionals is dedicated to providing our customers with the resources and guidance they need to make informed decisions and protect their property investments.<br>
+                  Customers can use our online tools to get a quote or get more information about the different types of title insurance policies available. If you need more personalized assistance, customers can also contact us by phone or email to speak with one of our friendly and knowledgeable agents. Our agents are available to answer any questions you may have and provide you with the guidance you need to navigate the title insurance process.
+                  <br>
+                  At Awo Title, we are committed to providing our customers with the best service and resources possible.              
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b ">
+                <button data-modal-hide="AltaWiremodel" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
 </section>
 
 <section class="bg-blue-400 py-16">
@@ -705,6 +1077,84 @@
   </div>
   <!-- container.// -->
 </section>
+
+<section class="overflow-hidden bg-white py-8 sm:py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+      <div class="lg:pr-8 lg:pt-4">
+        <div class="lg:max-w-lg">
+          <h2 class=" font-semibold leading-7 text-4xl text-blue-600">Our Sponsors </h2>
+          <p class="font-semibold text-gray-500 text-xl md:text-xl mt-3 leading-normal"> Following sponsors
+          </p>
+          <p class="mt-6 text-lg leading-8 text-gray-600">Here are our payment sponsor you can visit contact them for any questions    
+          </p>
+          <ul class="mt-8 space-y-3 font-medium">
+              <li class="flex items-start lg:col-span-1 service-item">
+                  <div class="flex-shrink-0">
+                      <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                  </div>
+                  <p class="ml-3 leading-5 text-gray-600">
+                     <a href="https://www.zoccam.com/">Zoccam</a> 
+                  </p>
+              </li>
+              <li class="flex items-start lg:col-span-1 service-item">
+                  <div class="flex-shrink-0">
+                      <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                  </div>
+                  <p class="ml-3 leading-5 text-gray-600">
+                    <a href="paymints.io">
+                      Paymints - Send Earnest Money Deposit securely 
+                    </a>
+                  </p>
+              </li>
+              <li class="flex items-start lg:col-span-1 service-item">
+                  <div class="flex-shrink-0">
+                      <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                  </div>
+                  <p class="ml-3 leading-5 text-gray-600">
+                    Remote Online Notary                   </p>
+              </li>
+              <li class="flex items-start lg:col-span-1 service-item">
+                  <div class="flex-shrink-0">
+                      <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                  </div>
+                  <p class="ml-3 leading-5 text-gray-600">
+                    DC TOPA Guidance                  </p>
+              </li>
+              <li class="flex items-start lg:col-span-1 service-item">
+                  <div class="flex-shrink-0">
+                      <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                  </div>
+                  <p class="ml-3 leading-5 text-gray-600">
+                    Maryland Jurisdiction Tenants Opportunity to Purchase Act
+                  </p>
+              </li>
+      
+
+          </ul>
+        </div>
+        <div class="mt-10 flex items-center gap-x-6">
+          <!-- <a href="#"
+            class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Start
+            for free
+          </a> -->
+       
+        </div>
+      </div><img style="min-height: 43em;" src="https://www.zoccam.com/wp-content/uploads/2019/01/site-home-EMDmockups.png" alt="Product screenshot" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+    </div>
+  </div>
+</section>
+
 <section id="team" class="overflow-hidden hidden bg-gray-1 pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
   <div class="container mx-auto">
     <div class="-mx-4 flex flex-wrap">
@@ -898,7 +1348,26 @@
 </section>
 
 
-
+<section>
+  <div class="gtco-testimonials" style="  background: aliceblue; overflow: hidden;  ">
+    <h2>Testimonials Carousel - Cards Comments</h2>
+    <div class="owl-carousel owl-carousel1 owl-theme testimonialchange p-3"  >
+      <% for(card of cards){  %>
+        <div class="p-2">
+          <div class="card text-center"><img class="card-img-top" src="/imgs/like.png" alt="">
+            <div class="card-body">
+              <h5><%=card.name %> <br />
+              </h5>
+              <p class="card-text">“ <%=card.comment %> ” </p>
+            </div>
+          </div>
+        </div>
+        <% } %>
+  
+  
+    </div>
+  </div>
+</section>
 
 <section id="contact" class="relative py-20 md:py-[120px]">
   <div class="absolute left-0 top-0 -z-[1] h-full w-full "></div>
@@ -912,8 +1381,7 @@
               CONTACT US
             </span>
             <h2 class="max-w-[260px] text-[35px] font-semibold leading-[1.14] ">
-              Let's talk about 
-            </h2>
+              Get In Touch With Awo Title            </h2>
           </div>
           <br>
           <div class="mb-12 flex flex-wrap justify-between lg:mb-0">
@@ -991,13 +1459,12 @@
     </div>
   </div>
 </section>
-
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
   const titles = [
     `CLIENT FIRST . DEPENDABLE . QUALITY SOLUTIONS
-AWO Title is a full service title and escrow company serving clients throughout the state of Maryland, Virginia, and the District of Columbia.
 `,
     "STRESS FREE HOME SALE AND PURCHASE IN THE DMV",
     // Add more titles as needed
@@ -1057,4 +1524,109 @@ AWO Title is a full service title and escrow company serving clients throughout 
             console.error(error);
         });
     }
+    document.addEventListener('DOMContentLoaded', () => {
+  const services = document.querySelectorAll('.service-item');
+  let delay = 0;
+
+  services.forEach(service => {
+    setTimeout(() => {
+      service.classList.remove('hidden');
+    }, delay);
+    delay += 500; // Delay in milliseconds for each item
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    rootMargin: '0px',
+    threshold: 0.1
+  });
+
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => observer.observe(card));
+
+});
+
+(function () {
+  "use strict";
+
+  var carousels = function () {
+    $(".owl-carousel1").owlCarousel({
+      loop: true,
+      center: true,
+      margin: 0,
+      responsiveClass: true,
+      nav: false,
+      responsive: {
+        0: {
+          items: 1,
+          nav: false
+        },
+        680: {
+          items: 2,
+          nav: false,
+          loop: false
+        },
+        1000: {
+          items: 3,
+          nav: true
+        }
+      }
+    });
+  };
+
+  (function ($) {
+    carousels();
+  })(jQuery);
+})();
+
+
+// URL to fetch reviews from
+const url = 'https://hibu.us/api/public/v2/merchants/22294/reviews.json?limit=10&page=1&filter=null&thirdParty=false&randomize=false&skipPagination=false';
+
+// Function to fetch reviews and update the page
+function fetchAndUpdateReviews() {
+  fetch(url)
+    .then(response => response.json()) // Parse the JSON response
+    .then(data => {
+      const reviews = data.reviews;
+      const testimonialsContainer = document.querySelector('.teestimonialchange');
+      let newHtmlContent = '';
+
+      // Loop through each review and build the HTML content
+      reviews.forEach(review => {
+        newHtmlContent += `
+
+        
+          <div>
+            <div class="card text-center">
+              <img class="card-img-top" src="https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300" alt="">
+              <div class="card-body">
+                <h5>${review.name}<br />
+                  <span> Customer </span>
+                </h5>
+                <p class="card-text">“ ${review.comment} ”</p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      // Update the .testimonialchange element's HTML
+      testimonialsContainer.innerHTML = newHtmlContent;
+      testimonialsContainer.classList.add('owl-carousel owl-carousel1 owl-theme ')
+    })
+    .catch(error => {
+      console.error('Error fetching reviews:', error);
+    });
+}
+
+// Call the function to update the reviews on page load
+fetchAndUpdateReviews();
+
+
 </script>
