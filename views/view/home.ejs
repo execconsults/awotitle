@@ -37,6 +37,9 @@
 .grayc{
   color: rgba(255, 255, 255, 0.548);
 }
+.owl-stage{
+  overflow: hidden;
+}
 
 /* CSS for animated background transition */
 @keyframes changeBackground {
@@ -100,8 +103,9 @@
     display: none;
   }
 .owl-stage{
+  overflow: hidden;
+
   display: flex;
-  overflow: scroll;
 }
   .owl-dots {
     text-align: center;
@@ -422,7 +426,7 @@
           <h4 class="mb-3 text-xl font-bold ">
             Place Title Order
           </h4>
-          <p class="mb-8 text-body-color  lg:mb-9" style="height: 5em;">
+          <p class="mb-8 text-body-color  lg:mb-9" style="height: 8em;">
          Get your title placed withing the application please allow us 24 hour to process
           </p>
           <button   data-modal-target="titltemodel" data-modal-toggle="titltemodel" class="text-base  rounded-xl p-3 text-gray-700 border font-medium hover:text-primary shadow ">
@@ -444,7 +448,7 @@
             Home Buying Resources
 
           </h4>
-          <p class="mb-8 text-body-color  lg:mb-9" style="height: 5em;">
+          <p class="mb-8 text-body-color  lg:mb-9" style="height: 8em;">
             You will be guided through our comprehensive home-buying process, which includes a curated selection of resources and local links for your convenience.
           </p>
           <button   data-modal-target="BuyingResources" data-modal-toggle="BuyingResources"   class="text-base  rounded-xl p-3 text-gray-700 border font-medium hover:text-primary shadow">
@@ -472,7 +476,7 @@
           <h4 class="mb-3 text-xl font-bold ">
             Home Closing Resouces
           </h4>
-          <p class="mb-8 text-body-color  lg:mb-9" style="height: 5em;">
+          <p class="mb-8 text-body-color  lg:mb-9" style="height: 8em;">
             Home Closing Resources offers essential tools and guidance for the final steps in securing your new home, ensuring a smooth and informed transition to ownership.          </p>
           <a  target="_blank" href="https://www.homeclosing101.org/" class="text-base  rounded-xl p-3 text-gray-700  border font-medium hover:text-primary shadow">
             Learn More
@@ -495,7 +499,7 @@
           <h4 class="mb-3 text-xl font-bold ">
             Alta Wire Fraud Warning
           </h4>
-          <p class="mb-8 text-body-color  lg:mb-9" style="height: 5em;">
+          <p class="mb-8 text-body-color  lg:mb-9" style="height: 8em;">
             The ALTA Wire Fraud Warning serves as a crucial alert system designed to inform and protect homebuyers    </p>
           <button data-modal-target="FraudWarning" data-modal-toggle="FraudWarning" href="javascript:void(0)" class="text-base  rounded-xl p-3 text-gray-700  border font-medium hover:text-primary shadow">
             Learn More
@@ -768,7 +772,7 @@
 </section>
 
 
-<section class=" p-2 md:mt-10"> 
+<section class=" p-2 md:mt-10 container"> 
   <div class="container max-w-screen-xl mx-auto px-4">
       <p class="text-blue-500 font-semibold  text-4xl md:text-4xl text-center uppercase mb-2">
          OUR RESOURCES
@@ -1033,9 +1037,9 @@ To reach our business, customers can use our online tools to access important do
   <!-- container.// -->
 </section>
 
-<section class="overflow-hidden bg-white py-8 sm:py-16">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+<section class="overflow-hidden container   bg-white py-8 sm:py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 ">
+    <div class="mx-auto grid  container  max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
       <div class="lg:pr-8 lg:pt-4">
         <div class="lg:max-w-lg">
           <h2 class=" font-semibold leading-7 text-4xl text-blue-600">Title Processing Resources </h2>
@@ -1279,7 +1283,7 @@ To reach our business, customers can use our online tools to access important do
 <section>
   <div class="gtco-testimonials p-2" style="  background: aliceblue; overflow: hidden;  ">
     <h2 class="text-2xl">Testimonials </h2>
-    <div class="owl-carousel owl-carousel1 owl-theme testimonialchange p-3"  >
+    <div style="overflow: hidden;" class="owl-carousel owl-carousel1 overflow-hidden owl-theme testimonialchange p-3"  >
       <% for(card of cards){  %>
         <div class="p-2">
           <div class="card text-center"><img class="card-img-top" src="/imgs/like.png" alt="">
@@ -1309,9 +1313,9 @@ To reach our business, customers can use our online tools to access important do
 <section id="contact" class="relative py-20 md:py-[120px]">
   <div class="absolute left-0 top-0 -z-[1] h-full w-full "></div>
   <div class="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] -700 lg:h-[45%] xl:h-1/2"></div>
-  <div class="container px-4">
+  <div class="container px-">
     <div class="-mx-4 flex flex-wrap items-center">
-      <div class="w-full px-4 lg:w-7/12 xl:w-8/12">
+      <div class="w-full lg:w-5/12 xl:w-7/12">
         <div class="ud-contact-content-wrapper">
           <div class="ud-contact-title mb-12 lg:mb-[150px]">
             <span class="mb-6 block text-base font-medium ">
@@ -1321,7 +1325,7 @@ To reach our business, customers can use our online tools to access important do
               Get In Touch With AWO Title            </h2>
           </div>
           <br>
-          <div class="mb-12 flex flex-wrap justify-between lg:mb-0">
+          <div class="mb-12  hidden flex flex-wrap justify-between lg:mb-0">
             <div class="mb-8 flex w-[330px] max-w-full">
               <div class="mr-6 text-[32px] text-primary">
                 <svg width="29" height="35" viewBox="0 0 29 35" class="fill-current">
@@ -1329,7 +1333,7 @@ To reach our business, customers can use our online tools to access important do
                   <path d="M14.5 8.58594C11.2734 8.58594 8.59375 11.2109 8.59375 14.4922C8.59375 17.7188 11.2187 20.3984 14.5 20.3984C17.7812 20.3984 20.4062 17.7734 20.4062 14.4922C20.4062 11.2109 17.7266 8.58594 14.5 8.58594ZM14.5 18.4297C12.3125 18.4297 10.5078 16.625 10.5078 14.4375C10.5078 12.25 12.3125 10.4453 14.5 10.4453C16.6875 10.4453 18.4922 12.25 18.4922 14.4375C18.4922 16.625 16.6875 18.4297 14.5 18.4297Z"></path>
                 </svg>
               </div>
-              <div>
+              <div class="hidden">
                 <h5 class="mb-[18px] text-lg font-semibold ">
                   Our Location
                 </h5>
@@ -1367,7 +1371,7 @@ To reach our business, customers can use our online tools to access important do
                       
               </div>
             </div>
-            <div class="mb-8 flex w-[330px] max-w-full">
+            <div class="mb-8 hidden flex w-[330px] max-w-full">
               <div class="mr-6 text-[32px] text-primary">
                 <svg width="34" height="25" viewBox="0 0 34 25" class="fill-current">
                   <path d="M30.5156 0.960938H3.17188C1.42188 0.960938 0 2.38281 0 4.13281V20.9219C0 22.6719 1.42188 24.0938 3.17188 24.0938H30.5156C32.2656 24.0938 33.6875 22.6719 33.6875 20.9219V4.13281C33.6875 2.38281 32.2656 0.960938 30.5156 0.960938ZM30.5156 2.875C30.7891 2.875 31.0078 2.92969 31.2266 3.09375L17.6094 11.3516C17.1172 11.625 16.5703 11.625 16.0781 11.3516L2.46094 3.09375C2.67969 2.98438 2.89844 2.875 3.17188 2.875H30.5156ZM30.5156 22.125H3.17188C2.51562 22.125 1.91406 21.5781 1.91406 20.8672V5.00781L15.0391 12.9922C15.5859 13.3203 16.1875 13.4844 16.7891 13.4844C17.3906 13.4844 17.9922 13.3203 18.5391 12.9922L31.6641 5.00781V20.8672C31.7734 21.5781 31.1719 22.125 30.5156 22.125Z"></path>
@@ -1391,7 +1395,7 @@ To reach our business, customers can use our online tools to access important do
         </div>
         <iframe class="w-full" loading="lazy" src="https://maps.google.com/maps?q=7323%20Hanover%20Parkway%20Suite%20D%2C%20Greenbelt%2C%20MD%2020770.&amp;t=m&amp;z=18&amp;output=embed&amp;iwloc=near" title="7323 Hanover Parkway Suite D, Greenbelt, MD 20770." aria-label="7323 Hanover Parkway Suite D, Greenbelt, MD 20770."></iframe>
           </div>
-          <div class="w-full px-4 lg:w-5/12 xl:w-4/12">
+          <div class="w-full  lg:w-7/12 xl:w-5/12" style="min-width: 41%;">
         <div class="wow fadeInUp rounded-lg bg-white px-8 py-10 shadow-testimonial dark:shadow-none sm:px-10 sm:py-12 md:p-[60px] lg:p-10 lg:px-10 lg:py-12 2xl:p-[60px]" data-wow-delay=".2s
           " style="visibility: visible; animation-delay: 0.2s;">
           <h3 class="mb-8 text-2xl font-semibold  md:text-[28px] md:leading-[1.42]">
